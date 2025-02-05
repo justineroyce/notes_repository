@@ -1,18 +1,17 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-
+    font-family: 'Arial', 'Helvetica', sans-serif;
 }
 
 body {
     width: 100%;
-    min-height: flex;
+    min-height: 100vh; /* Fix min-height issue */
+    display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffe5e5;
-
+    background-color: #ffe5e5; /* Soft pink background for Valentine's Day */
 }
 
 .container {
@@ -21,23 +20,72 @@ body {
     text-align: center;
     align-items: center;
     gap: 20px;
-    max-width: 500;
-    margin: 20px;
+    max-width: 500px; /* Fix max-width value */
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #fff0f0; /* Light red/pink background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ffcccb; /* Light border color */
 }
+
 .container .tenor-gif-embed {
     max-width: 200px;
+}
+
+.container h1 {
+    font-size: 2rem;
+    color: #f25d52; /* Red color for the text */
+    font-weight: bold;
+    font-family: 'Cursive', 'Arial', sans-serif;
+    margin-bottom: 15px;
 }
 
 .container .btn {
     display: flex;
     gap: 25px;
+    margin-top: 20px;
 }
 
 .btn a {
     text-decoration: none;
-    color: #111;
-    background: #fff;
-    padding: 10px 25px;
-    border-radius: 8px;
-    box-shadow: 0.5rem 1rem 3rem hsl(0, 0%, 0%, 0.3);
+    color: #fff;
+    background: linear-gradient(135deg, #ff3366, #ff99cc); /* Pink gradient */
+    padding: 12px 30px;
+    border-radius: 30px; /* Rounded button corners */
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0.5rem 1rem 3rem rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out, background 0.3s ease;
+}
+
+.btn a:hover {
+    transform: scale(1.1); /* Slight button grow on hover */
+    background: linear-gradient(135deg, #ff66b2, #ff3366); /* Darker pink gradient on hover */
+}
+
+.btn a:active {
+    transform: scale(1); /* Return to original size when clicked */
+}
+
+/* Add a heart animation to the "Yes" button */
+.btn a:first-child {
+    position: relative;
+}
+
+.btn a:first-child::after {
+
+    position: absolute;
+    top: -30px;
+    right: 10px;
+    font-size: 2rem;
+    animation: heartAnimation 1s infinite alternate;
+}
+
+@keyframes heartAnimation {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.5);
+    }
 }
