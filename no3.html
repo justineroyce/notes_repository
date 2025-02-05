@@ -22,10 +22,10 @@
         </div>
         <script src="./script.js"></script>
         <script>
-            // Redirect to index.html on page refresh
-            window.onload = function() {
+            // Add a condition to redirect only on page load (i.e., on browser refresh)
+            if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
                 window.location.replace("index.html");
-            };
+            }
         </script>
     </body>
 </html>
